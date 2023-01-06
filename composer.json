@@ -1,0 +1,31 @@
+{
+  "name": "gsdk/view-layout",
+  "type": "library",
+  "description": "View layout helper",
+  "version": "1.0.0",
+  "keywords": [
+	"gsdk",
+	"view"
+  ],
+  "license": "MIT",
+  "authors": [
+	{
+	  "name": "Sergey Guryanov",
+	  "email": "s16121986@yandex.ru"
+	}
+  ],
+  "require": {
+	"php": ">=8.0.2",
+	"gsdk/meta-page": ">=1.0.0"
+  },
+  "require-dev": {
+  },
+  "conflict": {
+  },
+  "autoload": {
+	"psr-4": {
+	  "Gsdk\\ViewLayout\\": ""
+	}
+  },
+  "minimum-stability": "dev"
+}

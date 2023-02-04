@@ -75,7 +75,7 @@ class Layout
 		if ($this->options['template'])
 			return view($this->options['template'], $this->getLayoutData());
 		else
-			view($this->options['view'], $this->getViewData());
+			return view($this->options['view'], $this->getViewData());
 	}
 
 	public function __toString(): string

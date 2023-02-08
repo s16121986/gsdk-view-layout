@@ -12,7 +12,7 @@ class Layout
 		Traits\AppData;
 
 	protected $options = [
-		'template' => 'layouts.default'
+		'layout' => 'layouts.default'
 	];
 
 	protected array $data = [];
@@ -52,6 +52,11 @@ class Layout
 		return $this;
 	}
 
+	public function layout(string $layout): static
+	{
+		return $this->setOption('layout', $layout);
+	}
+
 	public function view($view, array $data = []): static
 	{
 		$this->setOption('view', $view);
@@ -68,19 +73,19 @@ class Layout
 		return $this;
 	}
 
-	public function layout()
+	public function render()
 	{
 		$this->configure();
 
-		if ($this->options['template'])
-			return view($this->options['template'], $this->getLayoutData());
+		if ($this->options['layout'])
+			return view($this->options['layout'], $this->getLayoutData());
 		else
 			return view($this->options['view'], $this->getViewData());
 	}
 
 	public function __toString(): string
 	{
-		return (string)$this->layout();
+		return (string)$this->render();
 	}
 
 	protected function getLayoutData()
